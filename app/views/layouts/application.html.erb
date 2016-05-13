@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% flash.each_with_index do |flash, index| %>
+  <p><%= flash.first %> - <%= flash.last %></p>
+<% end %>
+
 <%= yield %>
 
 </body>
