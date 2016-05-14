@@ -1,0 +1,10 @@
+= form_for @question do |form|
+
+  - if @question.errors.any?
+    %ul
+      - @question.errors.full_messages.each do |message|
+        %li= message
+
+  = render partial: 'form', locals: { f: form }
+
+  = form.submit t('add')

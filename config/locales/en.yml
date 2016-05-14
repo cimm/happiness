@@ -1,5 +1,11 @@
 ---
 en:
+  add: Add
   authenticated: Authenticated
+  created: Created
+  edit: Edit
+  error: Error
   login: Login
   not_authenticated: Not authenticated
+  update: Update
+  updated: Updated

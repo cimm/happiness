@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     if valid_auth_domain? && employee = find_or_create_employee
       session[:current_employee] = employee
-      flash[:success] = t('authenticated')
+      flash[:notice] = t('authenticated')
     else
       session[:current_employee] = nil
       flash[:error] = t('not_authenticated')

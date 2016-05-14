@@ -1,0 +1,7 @@
+%p
+  = f.label :body
+  = f.text_field :body
+
+%p
+  = f.label :regularity
+  = f.select :regularity, Question::REGULARITIES
