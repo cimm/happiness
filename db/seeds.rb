@@ -1,7 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+fixed_questions = [
+  "Are you feeling happy now?"
+]
+
+fixed_questions.each do |question|
+  Question.create!(body: question, regularity: 'fixed')
+end
+
+random_questions = [
+  "How do you feel about the opportunities to grow and learn at work?",
+  "How do you feel about the importance of the work that you do?",
+  "How energising are your interactions at work?",
+  "How do you feel about your workload?",
+  "How would you rate your work-life balance today?",
+  "Are you feeling happy now?",
+  "What's the level of comfort you have at your work place?",
+  "How do you feel about recommending a friend work at your company?",
+  "How do you feel about the number of hours you spent working today?",
+  "How encouraging was your manager today?",
+  "How clearly defined were your expectations at work today?",
+  "How would you rate your productivity today?",
+  "How do you feel about the results you achieved today?",
+  "How good do you feel about yourself?",
+  "How satisfied are you about your accomplishments?",
+  "How do you feel about your teammates' commitment to producing quality work?"
+]
+
+random_questions.each do |question|
+  Question.create!(body: question, regularity: 'random')
+end
