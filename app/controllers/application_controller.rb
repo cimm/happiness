@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_current_employee
-    @current_employee = session[:current_employee]
+    @current_employee = Employee.find_by_id(session[:current_employee_id])
   end
 end

@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
     @google_auth = request.env['omniauth.auth']
 
     if valid_auth_domain? && employee = find_or_create_employee
-      session[:current_employee] = employee
+      session[:current_employee_id] = employee.id
       flash[:notice] = t('authenticated')
     else
-      session[:current_employee] = nil
+      session[:current_employee_id] = nil
       flash[:error] = t('not_authenticated')
     end
     redirect_to root_path
