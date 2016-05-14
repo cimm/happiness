@@ -4,4 +4,5 @@
   %a{href: '/auth/google_oauth2'}= t('login')
 
 %p
-  current_employee: #{session[:current_employee]}
+  Authenticated?
+  %strong= employee_authenticated?
