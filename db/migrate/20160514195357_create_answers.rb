@@ -1,8 +1,9 @@
-class SurveyQuestions < ActiveRecord::Migration
+class CreateAnswers < ActiveRecord::Migration
   def change
-    create_table :survey_questions do |t|
+    create_table :answers do |t|
       t.references :survey,   null: false
       t.references :question, null: false
+      t.integer    :score
     end
   end
 end

@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20160514195357) do
 
+  create_table "answers", force: :cascade do |t|
+    t.integer "survey_id",   null: false
+    t.integer "question_id", null: false
+    t.integer "score"
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "email",      null: false
     t.string   "uid",        null: false
@@ -27,11 +33,6 @@ ActiveRecord::Schema.define(version: 20160514195357) do
     t.string   "regularity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "survey_questions", force: :cascade do |t|
-    t.integer "survey_id",   null: false
-    t.integer "question_id", null: false
   end
 
   create_table "surveys", force: :cascade do |t|

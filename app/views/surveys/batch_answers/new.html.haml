@@ -1,0 +1,23 @@
+= form_for :batch_answers, url: survey_batch_answers_path do |f|
+  - @answers.each do |answer|
+    = fields_for 'answers[]', answer do |g|
+      %p
+        = answer.question.body
+
+      %p
+        = g.radio_button :score, 1
+        = g.label :score, '1', value: 1
+        
+        = g.radio_button :score, 2
+        = g.label :score, '2', value: 2
+
+        = g.radio_button :score, 3
+        = g.label :score, '3', value: 3
+
+        = g.radio_button :score, 4
+        = g.label :score, '4', value: 4
+
+        = g.radio_button :score, 5
+        = g.label :score, '5', value: 5
+
+  = f.submit t('save')
