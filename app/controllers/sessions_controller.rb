@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def google_oauth2
+  def create
     @google_auth = request.env['omniauth.auth']
 
     if valid_auth_domain? && employee = find_or_create_employee
