@@ -7,5 +7,12 @@ en:
   error: Error
   login: Login
   not_authenticated: Not authenticated
+  survey_mail:
+    new:
+      subject: New survey
+      intro: |
+        Hi there,
+
+        Time for a new survey again, this won't take long, promisse.
   update: Update
   updated: Updated
