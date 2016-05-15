@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by_id(session[:current_user_id])
   end
 
+  def authenticate_user!
+    # TODO Store original redirect
+    redirect_to '/auth/google_oauth2' if @current_user.nil?
+  end
+
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end

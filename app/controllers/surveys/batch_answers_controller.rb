@@ -1,4 +1,6 @@
 class Surveys::BatchAnswersController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @answers = @current_user.answers_for_survey(params[:survey_id])
 
