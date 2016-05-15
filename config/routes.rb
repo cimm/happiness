@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :questions, expect: [:show, :destroy]
   resources :surveys, only: [] do
     resources :batch_answers, controller: 'surveys/batch_answers', only: [:new, :create]
+    resource :completed, controller: 'surveys/completed', only: [:show]
   end
   root to: 'home#index'
 end
