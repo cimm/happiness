@@ -6,6 +6,6 @@
   %tbody
   - @questions.each do |question|
     %tr
-      %td= question.body
+      %td= link_to question.body, question_path(question)
       %td= question.regularity
       %td= link_to t('edit'), edit_question_path(question)

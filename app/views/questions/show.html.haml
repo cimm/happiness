@@ -1,0 +1,16 @@
+%h1= @question.id
+%p= @question.body
+
+%h2= t('overall')
+
+%p
+  = t('age')
+  = time_ago_in_words @question.created_at
+
+%p
+  = t('total_answers')
+  = @question.scores.count
+
+%p
+  = t('happiness_score')
+  = @question.happiness_score
