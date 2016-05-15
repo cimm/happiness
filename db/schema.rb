@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20160514195357) do
 
   create_table "answers", force: :cascade do |t|
+    t.integer "employee_id", null: false
     t.integer "survey_id",   null: false
     t.integer "question_id", null: false
     t.integer "score"
