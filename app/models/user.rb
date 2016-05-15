@@ -1,4 +1,4 @@
-class Employee < ActiveRecord::Base
+class User < ActiveRecord::Base
   validates :email, :uid, presence: true
   validates :uid, uniqueness: true
 

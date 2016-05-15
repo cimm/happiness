@@ -1,10 +1,10 @@
-class CreateEmployees < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :employees do |t|
+    create_table :users do |t|
       t.string     :email, null: false
       t.string     :uid,   null: false
       t.timestamps         null: false
     end
-    add_index :employees, :uid, unique: true
+    add_index :users, :uid, unique: true
   end
 end

@@ -1,19 +1,19 @@
 namespace :survey do
   desc 'Send out a survey'
   task send: :environment do
-    exit unless Employee.any?
+    exit unless User.any?
 
     survey = Survey.new
     questions = generate_question_set
 
-    Employee.find_each do |employee|
-      puts "Sending survey to #{employee.email}"
+    User.find_each do |user|
+      puts "Sending survey to #{user.email}"
 
       questions.each do |question|
-        Answer.create(employee: employee, question: question, survey: survey)
+        Answer.create(user: user, question: question, survey: survey)
       end
 
-      SurveyMailer.new(survey, employee).deliver_later
+      SurveyMailer.new(survey, user).deliver_later
     end
   end
 

@@ -14,20 +14,11 @@
 ActiveRecord::Schema.define(version: 20160514195357) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer "employee_id", null: false
+    t.integer "user_id",     null: false
     t.integer "survey_id",   null: false
     t.integer "question_id", null: false
     t.integer "score"
   end
-
-  create_table "employees", force: :cascade do |t|
-    t.string   "email",      null: false
-    t.string   "uid",        null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "employees", ["uid"], name: "index_employees_on_uid", unique: true
 
   create_table "questions", force: :cascade do |t|
     t.text     "body",       null: false
@@ -40,5 +31,14 @@ ActiveRecord::Schema.define(version: 20160514195357) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",      null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "users", ["uid"], name: "index_users_on_uid", unique: true
 
 end

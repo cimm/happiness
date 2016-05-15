@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def employee_authenticated?
-    @current_employee.present?
+  def user_authenticated?
+    @current_user.present?
   end
 end
