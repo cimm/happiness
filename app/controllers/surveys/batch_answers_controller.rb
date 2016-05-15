@@ -1,7 +1,9 @@
 class Surveys::BatchAnswersController < ApplicationController
   def new
-    survey = Survey.find(params[:survey_id])
-    @answers = survey.answers
+    @answers = @current_user.answers_for_survey(params[:survey_id])
+
+    not_found if @answers.none?
+    not_authorized if @answers.unanswered.any?
   end
 
   def create

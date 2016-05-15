@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
   def set_current_user
     @current_user = User.find_by_id(session[:current_user_id])
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def not_authorized
+    render file: "#{Rails.root}/public/403.html", status: 403, layout: false
+  end
 end
