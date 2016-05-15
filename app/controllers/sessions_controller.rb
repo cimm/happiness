@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  VALID_AUTHENTICATION_DOMAIN = ENV.fetch('VALID_AUTHENTICATION_DOMAIN')
+
   def create
     @google_auth = request.env['omniauth.auth']
 
@@ -19,6 +21,6 @@ class SessionsController < ApplicationController
   end
 
   def valid_auth_domain?
-    @google_auth.info.email.include?('mymicroinvest.com')
+    @google_auth.info.email.include?(VALID_AUTHENTICATION_DOMAIN)
   end
 end
