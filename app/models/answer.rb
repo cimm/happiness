@@ -6,5 +6,5 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :survey
 
-  scope :unanswered, -> { where score: nil }
+  scope :answered, -> { where.not(score: nil) }
 end

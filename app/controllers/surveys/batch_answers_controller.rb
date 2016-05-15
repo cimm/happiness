@@ -5,7 +5,7 @@ class Surveys::BatchAnswersController < ApplicationController
     @answers = @current_user.answers_for_survey(params[:survey_id])
 
     not_found if @answers.none?
-    not_authorized if @answers.unanswered.any?
+    not_authorized if @answers.answered.any?
   end
 
   def create
