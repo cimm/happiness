@@ -1,6 +1,16 @@
 %h1= @question.id
 %p= @question.body
 
+%h2= t('last_7_days')
+
+%p
+  = t('total_answers')
+  = @question.scores(7.days.ago).count
+
+%p
+  = t('happiness_score')
+  = @question.happiness_score(7.days.ago)
+
 %h2= t('overall')
 
 %p

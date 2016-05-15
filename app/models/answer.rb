@@ -7,4 +7,5 @@ class Answer < ActiveRecord::Base
   belongs_to :survey
 
   scope :answered, -> { where.not(score: nil) }
+  scope :since, ->(since) { where('created_at >= ?', since) }
 end
