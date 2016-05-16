@@ -1,14 +1,24 @@
 ---
 en:
-  new: New
   authenticated: Authenticated
+  cancel: Cancel
   created: Created
   edit: Edit
+  email: Email
   error: Error
+  happiness_score: Happiness score
+  last: Last
+  last_7_days: Last 7 days
   login: Login with Google
+  new: New
   not_authenticated: Not authenticated
+  overall: Overall
+  question: Question
+  questions:
+    index:
+      fixed: Fixed
+      random: Random
   save: Save
-  cancel: Cancel
   survey_mail:
     new:
       intro: |
@@ -16,4 +26,6 @@ en:
 
         Time for a new survey again, this won't take long, promisse.
       subject: New survey
+  surveys: Surveys
+  total_answers: Total answers
   updated: Updated
