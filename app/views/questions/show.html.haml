@@ -1,26 +1,33 @@
-%h1= @question.id
-%p= @question.body
+.container
+  .clearfix
+    .sm-col.sm-col-12
+      %h1
+        = @question.body
+        = link_to t('edit'), edit_question_path(@question), class: 'btn p0 h4 ml1 gray'
 
-%h2= t('last_7_days')
+  .clearfix.mxn2
+    .sm-col.sm-col-6.px2
+      %h2= t('last_7_days')
 
-%p
-  = t('total_answers')
-  = @question.scores(7.days.ago).count
+      - hs = @question.happiness_score(7.days.ago)
+      .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }
+        %h3.h4.regular.black= t('happiness_score')
+        %abbr.h6.caps{ title: t('happiness_score') } hs
+        %span.h1= hs
 
-%p
-  = t('happiness_score')
-  = @question.happiness_score(7.days.ago)
+      .p2.rounded.bg-darken-1.mb2
+        %h3.h4.regular.black= t('total_answers')
+        .h1= @question.scores(7.days.ago).count
 
-%h2= t('overall')
+    .sm-col.sm-col-6.px2
+      %h2= t('overall')
 
-%p
-  = t('age')
-  = time_ago_in_words @question.created_at
+      - hs = @question.happiness_score
+      .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }
+        %h3.h4.regular.black= t('happiness_score')
+        %abbr.h6.caps{ title: t('happiness_score') } hs
+        %span.h1= hs
 
-%p
-  = t('total_answers')
-  = @question.scores.count
-
-%p
-  = t('happiness_score')
-  = @question.happiness_score
+      .p2.rounded.bg-darken-1.mb2
+        %h3.h4.regular.black= t('total_answers')
+        .h1= @question.scores.count

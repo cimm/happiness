@@ -1,7 +1,7 @@
 %p
-  = f.label :body
-  = f.text_field :body
+  = f.label :body, t('question'), class: 'gray'
+  = f.text_field :body, required: true, class: 'block col-12 mb1 field'
 
 %p
-  = f.label :regularity
-  = f.select :regularity, Question::REGULARITIES
+  = f.label :regularity, class: 'gray'
+  = f.select :regularity, Question::REGULARITIES, {}, { class: 'block col-12 mb1 field' }

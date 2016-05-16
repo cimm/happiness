@@ -1,13 +1,14 @@
 ---
 en:
-  add: Add
+  new: New
   authenticated: Authenticated
   created: Created
   edit: Edit
   error: Error
-  login: Login
+  login: Login with Google
   not_authenticated: Not authenticated
   save: Save
+  cancel: Cancel
   survey_mail:
     new:
       intro: |
@@ -15,5 +16,4 @@ en:
 
         Time for a new survey again, this won't take long, promisse.
       subject: New survey
-  update: Update
   updated: Updated

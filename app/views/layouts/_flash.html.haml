@@ -1,0 +1,6 @@
+- flash.each do |flash|
+  .clearfix
+    .sm-col.sm-col-12
+      - klasses = flash.first == 'notice' ? 'bg-green' : 'bg-red'
+      .bold.center.p2.white.rounded{ class: klasses }
+        = flash.last

@@ -1,0 +1,9 @@
+%tr
+  %td
+    = link_to question.body, question_path(question)
+    = link_to t('edit'), edit_question_path(question), class: 'btn p0 h6 ml1 gray'
+  %td
+    - hs = question.happiness_score(7.days.ago)
+    %div{class: colored_happiness_score(hs) }
+      %abbr.h6.caps{ title: t('happiness_score') } hs
+      .bold.inline-block= hs

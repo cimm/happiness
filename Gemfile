@@ -5,6 +5,7 @@ gem 'rails',                  '4.2.6'
 
 gem 'sqlite3',                '~> 1.3.11'
 
+gem 'basscss-rails',          '~> 3.0.0'
 gem 'coffee-rails',           '~> 4.1.0'
 gem 'haml',                   '~> 4.0.7'
 gem 'i18n-tasks',             '~> 0.9.5', group: :development

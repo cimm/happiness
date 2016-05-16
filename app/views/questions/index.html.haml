@@ -1,12 +1,22 @@
-%h1 Questions
+.container
+  .clearfix
+    .sm-col.sm-col-12
+      %h1 Questions
 
-= link_to t('add'), new_question_path
+  .clearfix
+    .sm-col.sm-col-12
+      .right.mb3= link_to t('new'), new_question_path, class: 'btn h5 btn-primary'
 
-%table
-  %tbody
-  - @questions.each do |question|
-    %tr
-      %td= link_to question.body, question_path(question)
-      %td= question.regularity
-      %td= question.happiness_score(7.days.ago)
-      %td= link_to t('edit'), edit_question_path(question)
+  .clearfix
+    .sm-col.sm-col-12
+      %table.table-light
+        %caption.mb2.bold.caps= t('.fixed')
+        %tbody
+        = render partial: 'question', collection: @questions.fixed_regularity
+
+  .clearfix.mt2
+    .sm-col.sm-col-12
+      %table.table-light
+        %caption.mb2.bold.caps= t('.random')
+        %tbody
+        = render partial: 'question', collection: @questions.random_regularity

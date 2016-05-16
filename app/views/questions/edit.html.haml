@@ -1,10 +1,15 @@
-= form_for @question do |form|
+.container
+  .clearfix
+    %h1= t('edit')
 
-  - if @question.errors.any?
-    %ul
-      - @question.errors.full_messages.each do |message|
-        %li= message
+    = form_for @question, html: { class: 'md-col md-col-8' } do |form|
 
-  = render partial: 'form', locals: { f: form }
+      - if @question.errors.any?
+        %ul
+          - @question.errors.full_messages.each do |message|
+            %li= message
 
-  = form.submit t('update')
+      = render partial: 'form', locals: { f: form }
+
+      %button.btn.btn-primary{ type: 'submit' }= t('save')
+      = link_to t('cancel'), questions_path, class: 'btn btn-primary black bg-silver'
