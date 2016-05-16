@@ -19,6 +19,10 @@
         %h3.h4.regular.black= t('total_answers')
         .h1= @question.scores(7.days.ago).count
 
+      .p2.rounded.bg-darken-1.mb2
+        %h3.h4.regular.black= t('total_users')
+        .h1= @question.users.count
+
     .sm-col.sm-col-6.px2
       %h2= t('overall')
 
@@ -31,3 +35,7 @@
       .p2.rounded.bg-darken-1.mb2
         %h3.h4.regular.black= t('total_answers')
         .h1= @question.scores.count
+
+      .p2.rounded.bg-darken-1.mb2
+        %h3.h4.regular.black= t('total_users')
+        .h1= @question.users.count

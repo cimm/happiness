@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
   validates :regularity, inclusion: { in: REGULARITIES }
 
   has_many :answers
+  has_many :users, -> { uniq }, through: :answers
 
   scope :fixed_regularity, -> { where regularity: 'fixed' }
   scope :random_regularity, -> { where regularity: 'random' }
