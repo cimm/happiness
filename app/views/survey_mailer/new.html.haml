@@ -1,0 +1,16 @@
+= t('survey_mail.intro_html')
+
+%p
+  %strong= @answer.question.body.upcase
+
+= link_to t('angry'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 0)
+
+= link_to t('sad'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 1)
+
+= link_to t('neutral'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 2)
+
+= link_to t('happy'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 3)
+
+= link_to t('delighted'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 4)
+
+= t('survey_mail.outro_html', name: ENV.fetch('NAME'), postmaster: ENV.fetch('POSTMASTER'))

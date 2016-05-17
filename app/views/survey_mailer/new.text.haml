@@ -1,3 +1,25 @@
-= t('survey_mail.new.intro')
-
-= @answer.question.body
+= t('survey_mail.intro')
+\
+= @answer.question.body.upcase
+\
+= succeed ':' do
+  = t('angry').upcase
+= new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 0)
+\
+= succeed ':' do
+  = t('sad').upcase
+= new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 1)
+\
+= succeed ':' do
+  = t('neutral').upcase
+= new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 2)
+\
+= succeed ':' do
+  = t('happy').upcase
+= new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 3)
+\
+= succeed ':' do
+  = t('delighted').upcase
+= new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 4)
+\
+= t('survey_mail.outro', name: ENV.fetch('NAME'), postmaster: ENV.fetch('POSTMASTER'))

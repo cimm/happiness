@@ -5,11 +5,12 @@
     = form_for :batch_answers, url: survey_batch_answers_path do |f|
       - @answers.each do |answer|
         = fields_for 'answers[]', answer do |g|
-          .clearfix
+          - klass = 'hide' if answer.score.present?
+          .clearfix{ class: klass }
             .sm-col.sm-col-12.mb3
               = answer.question.body
 
-          .clearfix.mb3
+          .clearfix.mb3{ class: klass }
             .sm-col.sm-col-2
               = g.radio_button :score, 0
               = g.label :score, '0', value: 0
