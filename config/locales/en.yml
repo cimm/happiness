@@ -6,7 +6,9 @@ en:
   edit: Edit
   email: Email
   error: Error
+  fixed: Fixed
   happiness_score: Happiness score
+  home: Home
   last: Last
   last_7_days: Last 7 days
   login: Login with Google
@@ -14,10 +16,8 @@ en:
   not_authenticated: Not authenticated
   overall: Overall
   question: Question
-  questions:
-    index:
-      fixed: Fixed
-      random: Random
+  questions: Questions
+  random: Random
   save: Save
   survey_mail:
     new:
@@ -28,4 +28,6 @@ en:
       subject: New survey
   surveys: Surveys
   total_answers: Total answers
+  total_users: Total users
   updated: Updated
+  users: Users

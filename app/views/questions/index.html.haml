@@ -10,13 +10,13 @@
   .clearfix
     .sm-col.sm-col-12
       %table.table-light
-        %caption.mb2.bold.caps= t('.fixed')
+        %caption.mb2.bold.caps= t('fixed')
         %tbody
         = render partial: 'question', collection: @questions.fixed_regularity
 
-  .clearfix.mt2
+  .clearfix.mt2.mb4
     .sm-col.sm-col-12
       %table.table-light
-        %caption.mb2.bold.caps= t('.random')
+        %caption.mb2.bold.caps= t('random')
         %tbody
         = render partial: 'question', collection: @questions.random_regularity
