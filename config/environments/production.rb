@@ -77,6 +77,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.force_ssl = true if ENV.fetch('PROTOCOL') == 'https'
+
   config.action_mailer.smtp_settings = {
     user_name:            ENV.fetch('MAILER_USER_NAME'),
     password:             ENV.fetch('MAILER_PASSWORD'),
