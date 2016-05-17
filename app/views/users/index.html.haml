@@ -16,4 +16,8 @@
           %tr
             %td= user.email
             %td= user.surveys.count
-            %td= user.surveys.last.created_at.to_date.to_s(:short)
+            %td
+              - if user.surveys.any?
+                = user.surveys.last.created_at.to_date.to_s(:short)
+              - else
+                .gray NA
