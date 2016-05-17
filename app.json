@@ -1,0 +1,69 @@
+{
+  "name": "Happiness",
+  "description": "Ask your employees how happy they are.",
+  "repository": "https://github.com/cimm/happiness",
+  "keywords": [
+    "ruby on rails",
+    "happiness",
+    "survey"
+  ],
+  "addons": [
+    "heroku-postgresql:hobby-dev",
+    "scheduler:standard"
+  ],
+  "env": {
+    "NAME": {
+      "description": "Name of the application, used on the homepage and in the mails.",
+      "value": "Happiness"
+    },
+    "PROTOCOL": {
+      "description": "Protocol to be used for the app: http or https.",
+      "value": "https"
+    },
+    "HOST": {
+      "description": "Hostname for the app.",
+      "value": "example.herokupp.com"
+    },
+    "PORT": {
+      "description": "Port the app will run on.",
+      "value": "80"
+    },
+    "GOOGLE_CLIENT_ID": {
+      "description": "Need for Google oAuth."
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "description": "Need for Google oAuth."
+    },
+    "POSTMASTER": {
+      "description": "Email address that will send the mails.",
+      "value": "postmaster@example.com"
+    },
+    "NUMBER_OF_RANDOM_QUESTIONS_PER_SURVEY": {
+      "description": "How many random questions are asked in each survey?",
+      "value": "2"
+    },
+    "VALID_AUTHENTICATION_DOMAIN": {
+      "description": "Only people with an email with this domain can login (Google Apps only).",
+      "value": "example.com"
+    },
+    "MAILER_USER_NAME": {
+      "description": "User name for the SMTP server."
+    },
+    "MAILER_PASSWORD": {
+      "description": "Password for the SMTP server."
+    },
+    "MAILER_ADDRESS": {
+      "description": "Address for the SMTP server (not the email address)."
+    },
+    "MAILER_DOMAIN": {
+      "description": "Domain for the SMTP server."
+    },
+    "MAILER_PORT": {
+      "description": "Port for the SMTP server.",
+      "value": "2525"
+    }
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate db:seed"
+  }
+}
