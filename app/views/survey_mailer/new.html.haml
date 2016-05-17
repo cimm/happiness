@@ -1,16 +1,24 @@
+:css
+  a { text-decoration: none; }
+
 = t('survey_mail.intro_html')
 
 %p
   %strong= @answer.question.body.upcase
 
-= link_to t('angry'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 0)
+= link_to new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 0) do
+  = image_tag 'angry.png', alt: t('angry')
 
-= link_to t('sad'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 1)
+= link_to new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 1) do
+  = image_tag 'sad.png', alt: t('sad')
 
-= link_to t('neutral'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 2)
+= link_to new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 2) do
+  = image_tag 'neutral.png', alt: t('neutral')
 
-= link_to t('happy'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 3)
+= link_to  new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 3) do
+  = image_tag 'happy.png', alt: t('happy')
 
-= link_to t('delighted'), new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 4)
+= link_to new_survey_batch_answer_url(survey_id: @answer.survey_id, answer_id: @answer.id, score: 4) do
+  = image_tag 'delighted.png', alt: t('delighted')
 
 = t('survey_mail.outro_html', name: ENV.fetch('NAME'), postmaster: ENV.fetch('POSTMASTER'))
