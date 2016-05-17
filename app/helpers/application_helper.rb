@@ -4,12 +4,14 @@ module ApplicationHelper
   end
 
   def colored_happiness_score(score)
-    if score < 0
-      klass = 'orange'
-    elsif score > 0
-      klass = 'olive'
-    else
+    if score == 0
       klass = 'gray'
+    elsif score < 10
+      klass = 'red'
+    elsif score < 60
+      klass = 'orange'
+    elsif score >= 60
+      klass = 'olive'
     end
     klass
   end

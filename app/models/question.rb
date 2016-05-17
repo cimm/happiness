@@ -16,12 +16,9 @@ class Question < ActiveRecord::Base
 
   def happiness_score(since = Time.at(0))
     scores = self.scores(since)
-    [
-      scores.count(0) * -3,
-      scores.count(1) * -2,
-      scores.count(2),
-      scores.count(3) * 2,
-      scores.count(4) * 3
-    ].sum
+    return 0 if scores.none?
+    average = (scores.sum.to_f / scores.count)
+    score = average * (100 / Answer::MAX_SCORE)
+    score.round
   end
 end
