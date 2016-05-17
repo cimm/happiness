@@ -11,7 +11,7 @@ class Question < ActiveRecord::Base
   scope :random_regularity, -> { where regularity: 'random' }
 
   def scores(since = Time.at(0))
-    answers.since(since).pluck(:score)
+    answers.since(since).pluck(:score).compact
   end
 
   def happiness_score(since = Time.at(0))
