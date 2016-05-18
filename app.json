@@ -22,7 +22,7 @@
     },
     "HOST": {
       "description": "Hostname for the app.",
-      "value": "example.herokupp.com"
+      "value": "example.herokuapp.com"
     },
     "GOOGLE_CLIENT_ID": {
       "description": "Need for Google oAuth."
