@@ -7,11 +7,13 @@ class SendSurveyService
   end
 
   def run
+    Rails.logger.info 'Preparing new survey'
     @users.each do |user|
       Rails.logger.info "Sending survey to user ##{user.id}"
       create_answers_for_user(user)
       send_survey_for_user(user)
     end
+    Rails.logger.info 'Done, going back to sleep.'
   end
 
   private

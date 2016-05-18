@@ -42,6 +42,10 @@
       "description": "How many random questions are asked in each survey?",
       "value": "2"
     },
+    "SEND_SURVEY_AT_DAYS": {
+      "description": "Comma separated list of the days a survey should be sent (1 is Monday).",
+      "value": "1,5"
+    },
     "VALID_AUTHENTICATION_DOMAIN": {
       "description": "Only people with an email with this domain can login (Google Apps only).",
       "value": "example.com"
