@@ -85,7 +85,7 @@ Rails.application.configure do
     address:              ENV.fetch('MAILER_ADDRESS'),
     domain:               ENV.fetch('MAILER_DOMAIN'),
     port:                 ENV.fetch('MAILER_PORT'),
-    authentication:       :cram_md5,
+    authentication:       ENV.fetch('MAILER_AUTHENTICATION'),
     enable_starttls_auto: true
   }
   config.action_mailer.delivery_method = :smtp

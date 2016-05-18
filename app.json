@@ -61,6 +61,10 @@
     "MAILER_PORT": {
       "description": "Port for the SMTP server.",
       "value": "2525"
+    },
+    "MAILER_AUTHENTICATION": {
+      "description": "Authentiation mechanism for the SMTP server (login or cram_md5).",
+      "value": "login"
     }
   },
   "scripts": {
