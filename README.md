@@ -16,6 +16,18 @@ It's a traditional, 12-factor app ready, Ruby on Rails web app. The design is mo
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+Follow the on screen instructions to configure your application, once done, add a scheduled task:
+
+```
+heroku addons:open scheduler
+```
+
+and add the following taks to run daily:
+
+```
+rake survey:daily_send
+```
+
 ## VPS
 
 It needs Ruby 2.3, Bundler, PostgreSQL and some connection to an SMTP server. Nothing too fancy.
