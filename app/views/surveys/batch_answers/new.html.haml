@@ -1,14 +1,12 @@
 .container
-  .clearfix.mb4
-    %h1= t('new')
-
+  .clearfix.mt3
     = form_for :batch_answers, url: survey_batch_answers_path do |f|
       - @answers.each do |answer|
         = fields_for 'answers[]', answer do |g|
           - klass = 'hide' if answer.score.present?
           .clearfix{ class: klass }
             .sm-col.sm-col-12.mb3
-              = answer.question.body
+              .h3= answer.question.body
 
           .clearfix.mb3{ class: klass }
             .sm-col.sm-col-2

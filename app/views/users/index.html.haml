@@ -1,21 +1,21 @@
-.container
-  .clearfix
-    .sm-col.sm-col-12
-      %h1 Users
+= render 'layouts/nav'
 
+.container
   .clearfix.mb4
     .sm-col.sm-col-12
-      %table.table-light
+      %table.table-light.mb2.mt4
         %thead
           %tr
-            %th= t('email')
-            %th= t('surveys')
-            %th= t('last')
+            %th.caps= t('email')
+            %th.caps= t('surveys')
+            %th.caps= t('last')
         %tbody
         - @users.each do |user|
           %tr
             %td= user.email
-            %td= user.surveys.count
+            %td
+              = user.surveys.count
+              .inline-block.gray &times;
             %td
               - if user.surveys.any?
                 = user.surveys.last.created_at.to_date.to_s(:short)

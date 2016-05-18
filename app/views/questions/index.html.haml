@@ -1,22 +1,20 @@
+= render 'layouts/nav'
+
 .container
   .clearfix
     .sm-col.sm-col-12
-      %h1 Questions
+      .right.mt1.mb2= link_to t('new'), new_question_path, class: 'btn btn-primary'
 
   .clearfix
     .sm-col.sm-col-12
-      .right.mb3= link_to t('new'), new_question_path, class: 'btn h5 btn-primary'
-
-  .clearfix
-    .sm-col.sm-col-12
-      %table.table-light
-        %caption.mb2.bold.caps= t('fixed')
+      %table.table-light.mb2
+        %thead
+          %tr
+            %th.mb2.bold.caps{ colspan: 2 }= t('fixed')
         %tbody
         = render partial: 'question', collection: @questions.fixed_regularity
-
-  .clearfix.mt2.mb4
-    .sm-col.sm-col-12
-      %table.table-light
-        %caption.mb2.bold.caps= t('random')
+        %thead
+          %tr
+            %th.mb2.bold.caps{ colspan: 2 }= t('random')
         %tbody
         = render partial: 'question', collection: @questions.random_regularity

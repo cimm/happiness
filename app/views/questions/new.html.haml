@@ -1,8 +1,8 @@
+= render 'layouts/nav'
+
 .container
   .clearfix.mb4
-    %h1= t('new')
-
-    = form_for @question do |form|
+    = form_for @question, html: { class: 'mt2' } do |form|
 
       - if @question.errors.any?
         %ul
@@ -11,5 +11,5 @@
 
       = render partial: 'form', locals: { f: form }
 
-      %button.btn.btn-primary{ type: 'submit' }= t('save')
-      = link_to t('cancel'), questions_path, class: 'btn btn-primary black bg-silver'
+      .clearfix
+        %button.btn.btn-primary.mt1{ type: 'submit' }= t('save')

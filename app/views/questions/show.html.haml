@@ -1,3 +1,5 @@
+= render 'layouts/nav'
+
 .container
   .clearfix
     .sm-col.sm-col-12
@@ -7,7 +9,7 @@
 
   .clearfix.mxn2.mb4
     .sm-col.sm-col-6.px2
-      %h2= t('last_7_days')
+      %h2.h4= t('last_7_days')
 
       - hs = @question.happiness_score(7.days.ago)
       .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }
@@ -24,7 +26,7 @@
         .h1= @question.users.count
 
     .sm-col.sm-col-6.px2
-      %h2= t('overall')
+      %h2.h4= t('overall')
 
       - hs = @question.happiness_score
       .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }

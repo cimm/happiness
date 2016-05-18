@@ -2,7 +2,6 @@
 en:
   angry: Angry
   authenticated: Authenticated
-  cancel: Cancel
   created: Created
   delighted: Delighted
   edit: Edit
@@ -11,10 +10,9 @@ en:
   fixed: Fixed
   happiness_score: Happiness score
   happy: Happy
-  home: Home
   last: Last
   last_7_days: Last 7 days
-  login: Login with Google
+  login: Login
   neutral: Neutral
   new: New
   not_authenticated: Not authenticated
@@ -25,7 +23,6 @@ en:
   sad: Sad
   save: Save
   survey_mail:
-    subject: New survey
     intro: |
       Hi there,
 
@@ -34,12 +31,13 @@ en:
       <p>Hi there,</p>
       <p>Time for a new survey again, this won't take long, promisse.</p>
     outro: |
-      All %{name} employees received this mail to get an idea of our overall happiness. This survey is completly anonymous.
+      All %{name} employees received this mail to get an idea of our overall happiness. This survey is anonymous.
 
       Not convinces and don't want any more mails? No problem, ask %{postmaster} to remove you from the list.
     outro_html: |
-      <p>All %{name} employees received this mail to get an idea of our overall happiness. This survey is completly anonymous.</p>
+      <p>All %{name} employees received this mail to get an idea of our overall happiness. This survey is anonymous.</p>
       <p>Not convinces and don't want any more mails? No problem, ask <a href="mailto:%{postmaster}?subject=Unsubscribe">%{postmaster}</a> to remove you from the list.</p>
+    subject: New survey
   surveys: Surveys
   total_answers: Total answers
   total_users: Total users
