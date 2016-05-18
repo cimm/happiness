@@ -93,5 +93,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV.fetch('HOST') }
   config.action_mailer.asset_host = URI::HTTP.new(ENV.fetch('PROTOCOL'), nil, ENV.fetch('HOST'), nil, nil, nil, nil, nil, nil).to_s
 
-  config.action_mailer.default_url_options = { host: ENV.fetch('HOST'), port: ENV.fetch('PORT') }
+  config.action_mailer.default_url_options = { protocol: ENV.fetch('PROTOCOL'), host: ENV.fetch('HOST') }
 end

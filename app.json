@@ -24,10 +24,6 @@
       "description": "Hostname for the app.",
       "value": "example.herokupp.com"
     },
-    "PORT": {
-      "description": "Port the app will run on.",
-      "value": "80"
-    },
     "GOOGLE_CLIENT_ID": {
       "description": "Need for Google oAuth."
     },
