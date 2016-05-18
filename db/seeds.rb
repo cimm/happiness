@@ -12,7 +12,6 @@ random_questions = [
   "How energising are your interactions at work?",
   "How do you feel about your workload?",
   "How would you rate your work-life balance today?",
-  "Are you feeling happy now?",
   "What's the level of comfort you have at your work place?",
   "How do you feel about recommending a friend work at your company?",
   "How do you feel about the number of hours you spent working today?",
