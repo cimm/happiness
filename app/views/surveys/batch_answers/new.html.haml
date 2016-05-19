@@ -10,19 +10,9 @@
 
           .clearfix.mb3{ class: klass }
             .sm-col.sm-col-2
-              = g.radio_button :score, 0
-              = g.label :score, value: 0 do
-                = image_tag 'angry.png', alt: t('angry')
-
-            .sm-col.sm-col-2
-              = g.radio_button :score, 1
-              = g.label :score, '1', value: 1 do
-                = image_tag 'sad.png', alt: t('sad')
-
-            .sm-col.sm-col-2
-              = g.radio_button :score, 2
-              = g.label :score, '2', value: 2 do
-                = image_tag 'neutral.png', alt: t('neutral')
+              = g.radio_button :score, 4
+              = g.label :score, '4', value: 4 do
+                = image_tag 'delighted.png', alt: t('delighted')
 
             .sm-col.sm-col-2
               = g.radio_button :score, 3
@@ -30,8 +20,18 @@
                 = image_tag 'happy.png', alt: t('happy')
 
             .sm-col.sm-col-2
-              = g.radio_button :score, 4
-              = g.label :score, '4', value: 4 do
-                = image_tag 'delighted.png', alt: t('delighted')
+              = g.radio_button :score, 2
+              = g.label :score, '2', value: 2 do
+                = image_tag 'neutral.png', alt: t('neutral')
+
+            .sm-col.sm-col-2
+              = g.radio_button :score, 1
+              = g.label :score, '1', value: 1 do
+                = image_tag 'sad.png', alt: t('sad')
+
+            .sm-col.sm-col-2
+              = g.radio_button :score, 0
+              = g.label :score, value: 0 do
+                = image_tag 'angry.png', alt: t('angry')
 
       %button.btn.btn-primary.mt2{ type: 'submit' }= t('save')
