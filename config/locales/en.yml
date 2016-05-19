@@ -26,17 +26,17 @@ en:
     intro: |
       Hi there,
 
-      Time for a new survey again, this won't take long, promisse.
+      Time for a new survey again, this won't take long, promise.
     intro_html: |
       <p>Hi there,</p>
-      <p>Time for a new survey again, this won't take long, promisse.</p>
+      <p>Time for a new survey again, this won't take long, promise.</p>
     outro: |
       All %{name} employees received this mail to get an idea of our overall happiness. This survey is anonymous.
 
-      Not convinces and don't want any more mails? No problem, ask %{postmaster} to remove you from the list.
+      Comments? Please reply to this email.
     outro_html: |
       <p>All %{name} employees received this mail to get an idea of our overall happiness. This survey is anonymous.</p>
-      <p>Not convinces and don't want any more mails? No problem, ask <a href="mailto:%{postmaster}?subject=Unsubscribe">%{postmaster}</a> to remove you from the list.</p>
+      <p>Comments? Please reply to this email.</p>
     subject: New survey
   surveys: Surveys
   total_answers: Total answers
