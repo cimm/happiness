@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = nil
       flash[:error] = t('not_authenticated')
     end
-    redirect_to root_path
+
+    redirect_to session[:previous_url] || root_path
   end
 
   private

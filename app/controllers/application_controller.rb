@@ -11,8 +11,13 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    # TODO Store original redirect
+    store_location
     redirect_to '/auth/google_oauth2' if @current_user.nil?
+  end
+
+  def store_location
+    return unless request.get? || request.xhr?
+    session[:previous_url] = request.fullpath
   end
 
   def not_found
