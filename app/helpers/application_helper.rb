@@ -1,4 +1,6 @@
 module ApplicationHelper
+  GOOD_ENOUGH_SCORE = ENV.fetch('GOOD_ENOUGH_SCORE').to_i
+
   def user_authenticated?
     @current_user.present?
   end
@@ -6,11 +8,9 @@ module ApplicationHelper
   def colored_happiness_score(score)
     if score == 0
       klass = 'gray'
-    elsif score < 10
+    elsif score < GOOD_ENOUGH_SCORE
       klass = 'red'
-    elsif score < 60
-      klass = 'orange'
-    elsif score >= 60
+    elsif score >= GOOD_ENOUGH_SCORE
       klass = 'olive'
     end
     klass

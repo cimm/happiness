@@ -30,6 +30,10 @@
     "GOOGLE_CLIENT_SECRET": {
       "description": "Need for Google oAuth."
     },
+    "GOOGLE_CLIENT_SECRET": {
+      "description": "Happiness scores over this value are colored green.",
+      "value": "60"
+    },
     "POSTMASTER": {
       "description": "Email address that will send the mails.",
       "value": "postmaster@example.com"
