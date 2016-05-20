@@ -3,10 +3,10 @@ namespace :survey do
 
   desc 'Check week day and send out a new survey'
   task daily_send: :environment do
-    abort 'No users found' unless User.any?
+    abort 'No users found' unless User.active.any?
     exit unless should_send_survey_today?
 
-    SendSurveyService.new(User.all).run
+    SendSurveyService.new(User.active).run
   end
 
   def should_send_survey_today?

@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @users = User.all
+    @active_users   = User.active.all
+    @inactive_users = User.inactive.all
   end
 
   def new
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    if user != @current_user && user.destroy
+    if user != @current_user && user.update(deleted_at: Date.today)
       flash[:notice] = t('deleted')
     else
       flash[:error] = t('error')

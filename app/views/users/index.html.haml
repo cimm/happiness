@@ -10,11 +10,9 @@
       %table.table-light.mb2
         %thead
           %tr
-            %th.caps= t('email')
-            %th.caps= t('surveys')
-            %th.caps= t('last')
+            %th.mb2.bold.caps{ colspan: 2 }= t('active')
         %tbody
-        - @users.each do |user|
+        - @active_users.each do |user|
           %tr
             %td
               = user.email
@@ -22,9 +20,13 @@
                 = link_to t('delete'), user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, class: 'btn h6 ml1 gray'
             %td
               = user.surveys.count
-              .inline-block.gray &times;
+              %small.gray= t('surveys')
+        %thead
+          %tr
+            %th.mb2.bold.caps{ colspan: 2 }= t('inactive')
+        - @inactive_users.each do |user|
+          %tr.gray
+            %td= user.email
             %td
-              - if user.surveys.any?
-                = user.surveys.last.created_at.to_date.to_s(:short)
-              - else
-                .gray NA
+              = user.surveys.count
+              %small.sliver= t('surveys')
