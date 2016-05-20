@@ -12,7 +12,10 @@
         %tbody
         - @users.each do |user|
           %tr
-            %td= user.email
+            %td
+              = user.email
+              - if user != @current_user
+                = link_to t('delete'), user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, class: 'btn h6 ml1 gray'
             %td
               = user.surveys.count
               .inline-block.gray &times;

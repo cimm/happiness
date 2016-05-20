@@ -2,7 +2,11 @@
 en:
   angry: Angry
   authenticated: Authenticated
+  confirm_delete: Confirm delete
   created: Created
+  delete: Delete
+  deleted: Deleted
+  deleted_error: Deleted error
   delighted: Delighted
   edit: Edit
   email: Email
