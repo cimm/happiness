@@ -6,7 +6,7 @@ Questions are configurable and can range from "How are you feeling today?" to "H
 
 Everyone can see the aggregated results, the individual answers are never shown to keep Happiness answers anonymous. A happiness score per question is calculated as a percentage. Scores above 60 are considered good enough, but this can be configured.
 
-You currently need a Google Apps domain, the only way to log in is via Google oAuth and everyone within that domain has full access to everything.
+You currently need a Google Apps domain, the only way to log in is via Google oAuth.
 
 It's a traditional, 12-factor app ready, Ruby on Rails web app. The design is mobile first so it can easily be used on phones.
 
@@ -26,6 +26,13 @@ and add the following taks to run daily:
 
 ```
 rake survey:daily_send
+```
+
+Add the first user:
+
+```
+heroku run console
+User.create(email: 'john@example.com')
 ```
 
 ## VPS
@@ -55,4 +62,11 @@ And (optionally) populate the database with some sample questions:
 
 ```
 rake db:seed
+```
+
+Add the first user:
+
+```
+rails console
+User.create(email: 'john@example.com')
 ```

@@ -2,11 +2,11 @@
 
 .container
   .clearfix.mb4
-    = form_for @question, html: { class: 'mt4' } do |form|
+    = form_for @user, html: { class: 'mt4' } do |form|
 
-      - if @question.errors.any?
+      - if @user.errors.any?
         %ul
-          - @question.errors.full_messages.each do |message|
+          - @user.errors.full_messages.each do |message|
             %li= message
 
       = render partial: 'form', locals: { f: form }

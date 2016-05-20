@@ -42,10 +42,6 @@
       "description": "Comma separated list of the days a survey should be sent (1 is Monday).",
       "value": "1,5"
     },
-    "VALID_AUTHENTICATION_DOMAIN": {
-      "description": "Only people with an email with this domain can login (Google Apps only).",
-      "value": "example.com"
-    },
     "MAILER_USER_NAME": {
       "description": "User name for the SMTP server."
     },

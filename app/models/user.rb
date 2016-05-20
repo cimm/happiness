@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :uid, presence: true
-  validates :uid, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   has_many :answers
   has_many :surveys, -> { uniq }, through: :answers
