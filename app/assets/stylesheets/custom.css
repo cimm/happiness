@@ -1,0 +1,97 @@
+/* Center box */
+
+.center-box {
+  position: relative;
+  top: 25vh;
+  text-align: center;
+}
+
+.center-box__image {
+  display: block;
+  margin: auto;
+}
+
+.center-box__button {
+  margin-top: 1.5em;
+}
+
+/* Navbar */
+
+.navbar {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5em;
+}
+
+.navbar ul {
+  margin: 1em 0;
+}
+
+.navbar__item {
+  text-transform: uppercase;
+  display: inline;
+  margin-right: 1em;
+}
+
+.navbar__item a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* Answer */
+
+.answer {
+  margin-bottom: 1em;
+}
+
+/* Undelete button */
+
+.undelete-button {
+  display: inline;
+}
+
+.undelete-button input {
+  margin-bottom: 0;
+}
+
+/* Flash */
+
+.flash {
+  margin-top: 0.5em;
+  text-align: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1em;
+}
+
+.flash-notice {
+  color: #33C3F0;
+  border-color: #33C3F0;
+}
+
+.flash-error {
+  color: #DD1144;
+  border-color: #DD1144;
+}
+
+/* Utility */
+
+.muted, .gray {
+  color: gray;
+} 
+
+.img-align {
+  vertical-align: sub;
+}
+
+.hide {
+  display: none;
+}
+
+.green {
+  color: #006600;
+}
+
+.red {
+  color: #DD1144;
+}

@@ -1,20 +1,21 @@
 = render 'layouts/nav'
 
-.container
-  .clearfix
-    .sm-col.sm-col-12
-      .right.mt1.mb2= link_to t('new'), new_question_path, class: 'btn btn-primary'
+= link_to new_question_path, class: 'button u-pull-right' do
+  = image_tag 'fi-magnifying-glass.svg', widht: 16, height: 16, class: 'img-align'
+  = t('new')
 
-  .clearfix
-    .sm-col.sm-col-12
-      %table.table-light.mb2
-        %thead
-          %tr
-            %th.mb2.bold.caps{ colspan: 2 }= t('fixed')
-        %tbody
-        = render partial: 'question', collection: @questions.fixed_regularity
-        %thead
-          %tr
-            %th.mb2.bold.caps{ colspan: 2 }= t('random')
-        %tbody
-        = render partial: 'question', collection: @questions.random_regularity
+%table.u-full-width
+  %thead
+    %tr
+      %th{ colspan: 2 }= t('fixed')
+      %th hs
+  %tbody
+  = render partial: 'question', collection: @questions.fixed_regularity
+
+%table.u-full-width
+  %thead
+    %tr
+      %th{ colspan: 2 }= t('random')
+      %th hs
+  %tbody
+  = render partial: 'question', collection: @questions.random_regularity

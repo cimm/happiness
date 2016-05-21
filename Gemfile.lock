@@ -38,7 +38,6 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     ast (2.2.0)
-    basscss-rails (3.0.0)
     builder (3.2.2)
     concurrent-ruby (1.0.2)
     easy_translate (0.5.0)
@@ -171,7 +170,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  basscss-rails (~> 3.0.0)
   haml (~> 4.0.7)
   i18n-tasks (~> 0.9.5)
   jquery-rails (~> 4.1.1)

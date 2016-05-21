@@ -6,7 +6,6 @@ class Surveys::BatchAnswersController < ApplicationController
     @answers = prefil_provided_answer(answers)
 
     not_found if @answers.none?
-    not_authorized if @answers.answered.any?
   end
 
   def create

@@ -1,3 +1,4 @@
-%p
-  = f.label :email, t('email'), class: 'gray'
-  = f.email_field :email, required: true, class: 'col-12 field'
+.row
+  .six.columns
+    = f.label :email
+    = f.email_field :email, required: true, class: 'u-full-width'

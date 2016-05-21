@@ -1,7 +1,9 @@
-%p
-  = f.label :body, t('question'), class: 'gray'
-  = f.text_field :body, required: true, class: 'col-12 field'
+.row
+  .six.columns
+    = f.label :body
+    = f.text_field :body, required: true, class: 'u-full-width'
 
-%p
-  = f.label :regularity, class: 'gray'
-  = f.select :regularity, Question::REGULARITIES, {}, { class: 'col-12 field' }
+.row
+  .six.columns
+    = f.label :regularity
+    = f.select :regularity, Question::REGULARITIES, {}

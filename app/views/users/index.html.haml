@@ -1,32 +1,40 @@
 = render 'layouts/nav'
 
-.container
-  .clearfix
-    .sm-col.sm-col-12
-      .right.mt1.mb2= link_to t('new'), new_user_path, class: 'btn btn-primary'
+= link_to new_user_path, class: 'button u-pull-right' do
+  = image_tag 'fi-torso.svg', widht: 16, height: 16, class: 'img-align'
+  = t('new')
 
-  .clearfix
-    .sm-col.sm-col-12
-      %table.table-light.mb2
-        %thead
-          %tr
-            %th.mb2.bold.caps{ colspan: 2 }= t('active')
-        %tbody
-        - @active_users.each do |user|
-          %tr
-            %td
-              = user.email
-              - if user != @current_user
-                = link_to t('delete'), user_path(user), method: :delete, data: { confirm: t('confirm_delete') }, class: 'btn h6 ml1 gray'
-            %td
-              = user.surveys.count
-              %small.gray= t('surveys')
-        %thead
-          %tr
-            %th.mb2.bold.caps{ colspan: 2 }= t('inactive')
-        - @inactive_users.each do |user|
-          %tr.gray
-            %td= user.email
-            %td
-              = user.surveys.count
-              %small.sliver= t('surveys')
+%table.u-full-width
+  %thead
+    %tr
+      %th{ colspan: 3 }= t('active')
+  %tbody
+  - @active_users.each do |user|
+    %tr
+      %td
+        = user.email
+      %td
+        - if user != @current_user
+          = link_to user_path(user), method: :delete do
+            = image_tag 'fi-trash.svg', widht: 16, height: 16
+      %td
+        .u-pull-right
+          = user.surveys.count
+          %small= t('surveys')
+
+%table.u-full-width
+  %thead
+    %tr.muted
+      %th{ colspan: 3 }= t('inactive')
+  %tbody
+  - @inactive_users.each do |user|
+    %tr.muted
+      %td= user.email
+      %td
+        = form_for user, html: { class: 'undelete-button'} do |form|
+          = form.hidden_field :deleted_at, value: ''
+          = image_submit_tag 'fi-refresh.svg', widht: 16, height: 16
+      %td
+        .u-pull-right
+          = user.surveys.count
+          %small= t('surveys')

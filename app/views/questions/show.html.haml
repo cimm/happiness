@@ -1,43 +1,33 @@
 = render 'layouts/nav'
 
-.container
-  .clearfix
-    .sm-col.sm-col-12
-      %h1
-        = @question.body
-        = link_to t('edit'), edit_question_path(@question), class: 'btn p0 h4 ml1 gray'
+%h1= @question.body
 
-  .clearfix.mxn2.mb4
-    .sm-col.sm-col-6.px2
-      %h2.h4= t('last_7_days')
+.u-cf
 
-      - hs = @question.happiness_score(7.days.ago)
-      .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }
-        %h3.h4.regular.black= t('happiness_score')
-        %abbr.h6.caps{ title: t('happiness_score') } hs
-        %span.h1= hs
+%h4= t('last_7_days')
 
-      .p2.rounded.bg-darken-1.mb2
-        %h3.h4.regular.black= t('total_answers')
-        .h1= @question.scores(7.days.ago).count
+.row
+  .one-third.column
+    - hs = @question.happiness_score(7.days.ago)
+    %h2{ class: colored_happiness_score(hs) }= number_to_percentage(hs, precision: 0)
+    %h5= t('happiness_score')
+  .one-third.column
+    %h2= @question.scores(7.days.ago).count
+    %h5= t('total_answers')
+  .one-third.column
+    %h2= @question.respondents(7.days.ago).count
+    %h5= t('total_users')
 
-      .p2.rounded.bg-darken-1.mb2
-        %h3.h4.regular.black= t('total_users')
-        .h1= @question.users.count
+%h4= t('overall')
 
-    .sm-col.sm-col-6.px2
-      %h2.h4= t('overall')
-
-      - hs = @question.happiness_score
-      .p2.rounded.bg-darken-1.mb2{ class: colored_happiness_score(hs) }
-        %h3.h4.regular.black= t('happiness_score')
-        %abbr.h6.caps{ title: t('happiness_score') } hs
-        %span.h1= hs
-
-      .p2.rounded.bg-darken-1.mb2
-        %h3.h4.regular.black= t('total_answers')
-        .h1= @question.scores.count
-
-      .p2.rounded.bg-darken-1.mb2
-        %h3.h4.regular.black= t('total_users')
-        .h1= @question.users.count
+.row
+  .one-third.column
+    - hs = @question.happiness_score
+    %h2{ class: colored_happiness_score(hs) }= number_to_percentage(hs, precision: 0)
+    %h5= t('happiness_score')
+  .one-third.column
+    %h2= @question.scores.count
+    %h5= t('total_answers')
+  .one-third.column
+    %h2= @question.respondents.count
+    %h5= t('total_users')

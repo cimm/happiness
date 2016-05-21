@@ -6,12 +6,10 @@ module ApplicationHelper
   end
 
   def colored_happiness_score(score)
-    if score == 0
-      klass = 'gray'
-    elsif score < GOOD_ENOUGH_SCORE
+    if score > 0 && score < GOOD_ENOUGH_SCORE
       klass = 'red'
     elsif score >= GOOD_ENOUGH_SCORE
-      klass = 'olive'
+      klass = 'green'
     end
     klass
   end

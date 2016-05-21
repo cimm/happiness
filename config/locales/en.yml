@@ -2,24 +2,18 @@
 en:
   angry: Angry
   authenticated: Authenticated
-  confirm_delete: Confirm delete
   created: Created
-  delete: Delete
   deleted: Deleted
   delighted: Delighted
-  edit: Edit
-  email: Email
   error: Error
   fixed: Fixed
   happiness_score: Happiness score
   happy: Happy
-  last: Last
   last_7_days: Last 7 days
   login: Login
   neutral: Neutral
   new: New
   overall: Overall
-  question: Question
   questions: Questions
   random: Random
   sad: Sad
@@ -40,7 +34,7 @@ en:
       <p>All %{name} employees received this mail to get an idea of our overall happiness. This survey is anonymous.</p>
       <p>Comments? Please reply to this email.</p>
     subject: New survey
-  surveys: Surveys
+  surveys: surveys
   total_answers: Total answers
   total_users: Total users
   updated: Updated

@@ -1,15 +1,12 @@
 = render 'layouts/nav'
 
-.container
-  .clearfix.mb4
-    = form_for @question, html: { class: 'mt4' } do |form|
+= form_for @question do |form|
 
-      - if @question.errors.any?
-        %ul
-          - @question.errors.full_messages.each do |message|
-            %li= message
+  - if @question.errors.any?
+    %ul
+      - @question.errors.full_messages.each do |message|
+        %li= message
 
-      = render partial: 'form', locals: { f: form }
+  = render partial: 'form', locals: { f: form }
 
-      .clearfix
-        %button.btn.btn-primary.mt1{ type: 'submit' }= t('save')
+  %button.button.button-primary{ type: 'submit' }= t('save')

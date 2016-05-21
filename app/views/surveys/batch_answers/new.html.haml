@@ -1,37 +1,33 @@
-.container
-  .clearfix.mt3
-    = form_for :batch_answers, url: survey_batch_answers_path do |f|
-      - @answers.each do |answer|
-        = fields_for 'answers[]', answer do |g|
-          - klass = 'hide' if answer.score.present?
-          .clearfix{ class: klass }
-            .sm-col.sm-col-12.mb3
-              .h3= answer.question.body
+= form_for :batch_answers, url: survey_batch_answers_path do |f|
+  - @answers.each do |answer|
+    = fields_for 'answers[]', answer do |g|
+      - klass = 'hide' if answer.score.present?
+      .row.answer{ class: klass }= answer.question.body
 
-          .clearfix.mb3{ class: klass }
-            .sm-col.sm-col-2
-              = g.radio_button :score, 4
-              = g.label :score, '4', value: 4 do
-                = image_tag 'delighted.png', alt: t('delighted')
+      .row.answer{ class: klass }
+        .two.columns
+          = g.radio_button :score, 4
+          = g.label :score, '4', value: 4 do
+            = image_tag 'delighted.png', alt: t('delighted')
 
-            .sm-col.sm-col-2
-              = g.radio_button :score, 3
-              = g.label :score, '3', value: 3 do
-                = image_tag 'happy.png', alt: t('happy')
+        .two.columns
+          = g.radio_button :score, 3
+          = g.label :score, '3', value: 3 do
+            = image_tag 'happy.png', alt: t('happy')
 
-            .sm-col.sm-col-2
-              = g.radio_button :score, 2
-              = g.label :score, '2', value: 2 do
-                = image_tag 'neutral.png', alt: t('neutral')
+        .two.columns
+          = g.radio_button :score, 2
+          = g.label :score, '2', value: 2 do
+            = image_tag 'neutral.png', alt: t('neutral')
 
-            .sm-col.sm-col-2
-              = g.radio_button :score, 1
-              = g.label :score, '1', value: 1 do
-                = image_tag 'sad.png', alt: t('sad')
+        .two.columns
+          = g.radio_button :score, 1
+          = g.label :score, '1', value: 1 do
+            = image_tag 'sad.png', alt: t('sad')
 
-            .sm-col.sm-col-2
-              = g.radio_button :score, 0
-              = g.label :score, value: 0 do
-                = image_tag 'angry.png', alt: t('angry')
+        .two.columns
+          = g.radio_button :score, 0
+          = g.label :score, value: 0 do
+            = image_tag 'angry.png', alt: t('angry')
 
-      %button.btn.btn-primary.mt2{ type: 'submit' }= t('save')
+  %button.button{ type: 'submit' }= t('save')

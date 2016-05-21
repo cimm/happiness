@@ -1,7 +1,6 @@
-.container
-  .sm-col.sm-col-12.center{ style: 'height: 100vh;' }
-    %div{ style: 'position: relative; top: 40%' }
-      %p= image_tag 'happy.svg', width: 64, height: 64
-      - unless user_authenticated?
-        %p
-          %a{href: '/auth/google_oauth2', class: 'btn btn-primary' }= t('login')
+= render 'layouts/nav' if user_authenticated?
+
+%section.center-box
+  = image_tag 'happy.svg', width: 64, height: 64, class: 'center-box__image'
+  - unless user_authenticated?
+    %a{ href: '/auth/google_oauth2', class: 'button button-primary center-box__button' }= t('login')

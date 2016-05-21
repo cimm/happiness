@@ -1,5 +1,4 @@
-.container.mt2
-  %nav.sm-col.sm-col-11
-    = image_tag 'happy.svg', height: 30, width: 30, class: 'btn'
-    = link_to t('questions'), questions_path, class: 'btn'
-    = link_to t('users'), users_path, class: 'btn'
+%nav.navbar
+  %ul
+    %li.navbar__item= link_to t('questions'), questions_path, class: 'btn'
+    %li.navbar__item= link_to t('users'), users_path, class: 'btn'

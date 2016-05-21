@@ -14,6 +14,10 @@ class Question < ActiveRecord::Base
     answers.since(since).pluck(:score).compact
   end
 
+  def respondents(since = Time.at(0))
+    answers.since(since).map(&:user).compact
+  end
+
   def happiness_score(since = Time.at(0))
     scores = self.scores(since)
     return 0 if scores.none?
