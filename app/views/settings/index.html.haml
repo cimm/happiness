@@ -1,0 +1,49 @@
+= render 'layouts/nav'
+
+%table.u-full-width
+  %tbody
+    %tr
+      %th= t('good_enough_score')
+      %td= ENV['GOOD_ENOUGH_SCORE']
+    %tr
+      %th= t('google_client_id')
+      %td= ENV['GOOGLE_CLIENT_ID']
+    %tr
+      %th= t('google_client_secret')
+      %td= '*' * ENV['GOOGLE_CLIENT_SECRET'].length
+    %tr
+      %th= t('host')
+      %td= ENV['HOST']
+    %tr
+      %th= t('mailer_address')
+      %td= ENV['MAILER_ADDRESS']
+    %tr
+      %th= t('mailer_authentication')
+      %td= ENV['MAILER_AUTHENTICATION']
+    %tr
+      %th= t('mailer_domain')
+      %td= ENV['MAILER_DOMAIN']
+    %tr
+      %th= t('mailer_password')
+      %td= '*' * ENV['MAILER_PASSWORD'].length
+    %tr
+      %th= t('mailer_port')
+      %td= ENV['MAILER_PORT']
+    %tr
+      %th= t('mailer_user_name')
+      %td= ENV['MAILER_USER_NAME']
+    %tr
+      %th= t('name')
+      %td= ENV['NAME']
+    %tr
+      %th= t('number_of_random_questions_per_survey')
+      %td= ENV['NUMBER_OF_RANDOM_QUESTIONS_PER_SURVEY']
+    %tr
+      %th= t('postmaster')
+      %td= ENV['POSTMASTER']
+    %tr
+      %th= t('protocol')
+      %td= ENV['PROTOCOL']
+    %tr
+      %th= t('send_survey_at_days')
+      %td= weekdays_to_names(ENV['SEND_SURVEY_AT_DAYS'].split(','))

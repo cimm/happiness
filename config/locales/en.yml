@@ -1,5 +1,6 @@
 ---
 en:
+  active: Active
   angry: Angry
   authenticated: Authenticated
   created: Created
@@ -7,17 +8,34 @@ en:
   delighted: Delighted
   error: Error
   fixed: Fixed
+  good_enough_score: Good enough score
+  google_client_id: Google client
+  google_client_secret: Google client secret
   happiness_score: Happiness score
   happy: Happy
+  host: Host
+  inactive: Inactive
   last_7_days: Last 7 days
   login: Login
+  mailer_address: Mailer address
+  mailer_authentication: Mailer authentication
+  mailer_domain: Mailer domain
+  mailer_password: Mailer password
+  mailer_port: Mailer port
+  mailer_user_name: Mailer user name
+  name: Name
   neutral: Neutral
   new: New
+  number_of_random_questions_per_survey: Number of random questions per survey
   overall: Overall
+  postmaster: Postmaster
+  protocol: Protocol
   questions: Questions
   random: Random
   sad: Sad
   save: Save
+  send_survey_at_days: Send survey at days
+  settings: Settings
   survey_mail:
     intro: |
       Hi there,

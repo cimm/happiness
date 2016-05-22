@@ -12,17 +12,9 @@
     "scheduler:standard"
   ],
   "env": {
-    "NAME": {
-      "description": "Name of the application, used on the homepage and in the mails.",
-      "value": "Happiness"
-    },
-    "PROTOCOL": {
-      "description": "Protocol to be used for the app: http or https.",
-      "value": "https"
-    },
-    "HOST": {
-      "description": "Hostname for the app.",
-      "value": "example.herokuapp.com"
+    "GOOD_ENOUGH_SCORE": {
+      "description": "Happiness scores over this value are colored green.",
+      "value": "60"
     },
     "GOOGLE_CLIENT_ID": {
       "description": "Need for Google oAuth."
@@ -30,41 +22,49 @@
     "GOOGLE_CLIENT_SECRET": {
       "description": "Need for Google oAuth."
     },
-    "GOOGLE_CLIENT_SECRET": {
-      "description": "Happiness scores over this value are colored green.",
-      "value": "60"
-    },
-    "POSTMASTER": {
-      "description": "Email address that will send the mails.",
-      "value": "postmaster@example.com"
-    },
-    "NUMBER_OF_RANDOM_QUESTIONS_PER_SURVEY": {
-      "description": "How many random questions are asked in each survey?",
-      "value": "2"
-    },
-    "SEND_SURVEY_AT_DAYS": {
-      "description": "Comma separated list of the days a survey should be sent (1 is Monday).",
-      "value": "1,5"
-    },
-    "MAILER_USER_NAME": {
-      "description": "User name for the SMTP server."
-    },
-    "MAILER_PASSWORD": {
-      "description": "Password for the SMTP server."
+    "HOST": {
+      "description": "Hostname for the app.",
+      "value": "example.herokuapp.com"
     },
     "MAILER_ADDRESS": {
       "description": "Address for the SMTP server (not the email address)."
     },
+    "MAILER_AUTHENTICATION": {
+      "description": "Authentiation mechanism for the SMTP server (login or cram_md5).",
+      "value": "login"
+    },
     "MAILER_DOMAIN": {
       "description": "Domain for the SMTP server."
+    },
+    "MAILER_PASSWORD": {
+      "description": "Password for the SMTP server."
     },
     "MAILER_PORT": {
       "description": "Port for the SMTP server.",
       "value": "2525"
     },
-    "MAILER_AUTHENTICATION": {
-      "description": "Authentiation mechanism for the SMTP server (login or cram_md5).",
-      "value": "login"
+    "MAILER_USER_NAME": {
+      "description": "User name for the SMTP server."
+    },
+    "NAME": {
+      "description": "Name of the application, used on the homepage and in the mails.",
+      "value": "Happiness"
+    },
+    "NUMBER_OF_RANDOM_QUESTIONS_PER_SURVEY": {
+      "description": "How many random questions are asked in each survey?",
+      "value": "2"
+    },
+    "POSTMASTER": {
+      "description": "Email address that will send the mails.",
+      "value": "postmaster@example.com"
+    },
+    "PROTOCOL": {
+      "description": "Protocol to be used for the app: http or https.",
+      "value": "https"
+    },
+    "SEND_SURVEY_AT_DAYS": {
+      "description": "Comma separated list of the days a survey should be sent (1 is Monday).",
+      "value": "1,5"
     }
   },
   "scripts": {

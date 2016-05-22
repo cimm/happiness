@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     klass
   end
+
+  def weekdays_to_names(wdays)
+    wdays.map{ |wday| Date::DAYNAMES[wday.to_i] }.compact.join(', ')
+  end
 end
