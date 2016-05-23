@@ -2,15 +2,18 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    authorize @current_user
     @active_users   = User.active.all.order(:email)
     @inactive_users = User.inactive.all.order(:email)
   end
 
   def new
+    authorize @current_user
     @user = User.new
   end
 
   def create
+    authorize @current_user
     @user = User.new(user_params)
 
     if @user.save
@@ -23,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    authorize @current_user
     user = User.find(params[:id])
 
     if user.update(user_params)
@@ -33,8 +37,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authorize @current_user
     user = User.find(params[:id])
-    if user != @current_user && user.update(deleted_at: Date.today)
+    if user != @current_user && user.update(deleted_at: Date.today, admin: false)
       flash[:notice] = t('deleted')
     else
       flash[:error] = t('error')
@@ -45,6 +50,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :deleted_at)
+    params.require(:user).permit(:email, :deleted_at, :admin)
   end
 end

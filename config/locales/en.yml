@@ -1,6 +1,7 @@
 ---
 en:
   active: Active
+  admin: ADMIN
   angry: Angry
   authenticated: Authenticated
   created: Created

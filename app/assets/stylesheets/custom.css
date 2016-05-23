@@ -43,6 +43,16 @@
   margin-bottom: 1em;
 }
 
+/* Icon form */
+
+.icon-form {
+  display: inline;
+}
+
+.icon-form input {
+  margin: 0;
+}
+
 /* Undelete button */
 
 .undelete-button {

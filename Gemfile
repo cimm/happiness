@@ -14,3 +14,4 @@ gem 'rails_12factor',         '~> 0.0.3', group: :production
 gem 'rake',                   '~> 10.5.0'
 gem 'sass-rails',             '~> 5.0'
 gem 'uglifier',               '>= 1.3.0'
+gem 'pundit',                 '~> 1.1.0'
