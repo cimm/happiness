@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 gem 'rails',                  '4.2.6'
 
+gem 'foreman',                '~> 0.50.0', group: :development
 gem 'haml',                   '~> 4.0.7'
 gem 'i18n-tasks',             '~> 0.9.5', group: :development
 gem 'jquery-rails',           '~> 4.1.1'
