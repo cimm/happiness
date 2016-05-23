@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @active_users   = User.active.all
-    @inactive_users = User.inactive.all
+    @active_users   = User.active.all.order(:email)
+    @inactive_users = User.inactive.all.order(:email)
   end
 
   def new
