@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_validation { self.email = self.email.downcase }
+
   validates :email, presence: true, uniqueness: true
 
   has_many :answers
