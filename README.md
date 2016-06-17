@@ -10,6 +10,10 @@ You currently need a Google Apps domain, the only way to log in is via Google oA
 
 It's a traditional, 12-factor app ready, Ruby on Rails web app. The design is mobile first so it can easily be used on phones.
 
+# Screenshots
+
+![](screenshots.png)
+
 # Installation
 
 ## Heroku
