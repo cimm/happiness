@@ -27,12 +27,12 @@ en:
   name: Name
   neutral: Neutral
   new: New
-  number_of_random_questions_per_survey: Number of random questions per survey
+  number_of_flexible_questions_per_survey: Number of flexible questions per survey
   overall: Overall
   postmaster: Postmaster
   protocol: Protocol
   questions: Questions
-  random: Random
+  flexible: Flexible
   sad: Sad
   save: Save
   send_survey_at_days: Send survey at days

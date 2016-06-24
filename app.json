@@ -50,8 +50,8 @@
       "description": "Name of the application, used on the homepage and in the mails.",
       "value": "Happiness"
     },
-    "NUMBER_OF_RANDOM_QUESTIONS_PER_SURVEY": {
-      "description": "How many random questions are asked in each survey?",
+    "NUMBER_OF_FLEXIBLE_QUESTIONS_PER_SURVEY": {
+      "description": "How many flexible questions are asked in each survey?",
       "value": "2"
     },
     "POSTMASTER": {

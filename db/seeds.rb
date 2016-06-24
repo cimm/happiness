@@ -6,7 +6,7 @@ fixed_questions.each do |question|
   Question.create!(body: question, regularity: 'fixed')
 end
 
-random_questions = [
+flexible_questions = [
   "How do you feel about the opportunities to grow and learn at work?",
   "How do you feel about the importance of the work that you do?",
   "How energising are your interactions at work?",
@@ -24,6 +24,6 @@ random_questions = [
   "How do you feel about your teammates' commitment to producing quality work?"
 ]
 
-random_questions.each do |question|
-  Question.create!(body: question, regularity: 'random')
+flexible_questions.each do |question|
+  Question.create!(body: question, regularity: 'flexible')
 end

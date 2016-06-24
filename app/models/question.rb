@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  REGULARITIES = %w(fixed random)
+  REGULARITIES = %w(fixed flexible)
 
   validates :body, :regularity, presence: true
   validates :regularity, inclusion: { in: REGULARITIES }
@@ -8,7 +8,7 @@ class Question < ActiveRecord::Base
   has_many :users, -> { uniq }, through: :answers
 
   scope :fixed_regularity, -> { where regularity: 'fixed' }
-  scope :random_regularity, -> { where regularity: 'random' }
+  scope :flexible_regularity, -> { where regularity: 'flexible' }
 
   def scores(since = Time.at(0))
     answers.since(since).pluck(:score).compact

@@ -2,9 +2,9 @@
 
 Happiness is a responsive web app to ask members of a group a few happiness related questions. We use it in our company to get a feeling how our colleagues are feeling. Respondents answer with a quick smiley, ranging from sad to happy.
 
-Questions are configurable and can range from "How are you feeling today?" to "How encouraging was your manager today?". There are fixed questions, asked each time and random ones where x questions are randomly picked from a pool. The first question is send by mail on a configurable schedule (once a week, every Monday & Friday,...) and once answered brings the respondent to a page with the extra answers.
+Questions are configurable and can range from "How are you feeling today?" to "How encouraging was your manager today?". There are fixed questions, asked each time and flexible ones where the next x questions are picked from a pool. The first question is send by mail on a configurable schedule (once a week, every Monday & Friday,...) and once answered brings the respondent to a page with the extra answers.
 
-Everyone can see the aggregated results, the individual answers are never shown to keep Happiness answers anonymous. A happiness score per question is calculated as a percentage. Scores above 60 are considered good enough, but this can be configured.
+Admins can see the aggregated results, the individual answers are never shown to keep Happiness answers anonymous. A happiness score per question is calculated as a percentage. Scores above 60 are considered good enough, but this can be configured.
 
 You currently need a Google Apps domain, the only way to log in is via Google oAuth.
 

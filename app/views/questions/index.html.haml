@@ -15,7 +15,7 @@
 %table.u-full-width
   %thead
     %tr
-      %th{ colspan: 2 }= t('random')
+      %th{ colspan: 2 }= t('flexible')
       %th hs
   %tbody
-  = render partial: 'question', collection: @questions.random_regularity
+  = render partial: 'question', collection: @questions.flexible_regularity

@@ -10,4 +10,5 @@ class Answer < ActiveRecord::Base
 
   scope :answered, -> { where.not(score: nil) }
   scope :since, ->(since) { where('created_at >= ?', since) }
+  scope :on_flexible_question, -> { includes(:question).where(questions: { regularity: 'flexible'}) }
 end
