@@ -6,5 +6,5 @@
       = image_tag 'fi-pencil.svg', widht: 16, height: 16
   %td
     .u-pull-right
-      - hs = question.happiness_score(7.days.ago)
+      - hs = question.happiness_score
       %div{class: colored_happiness_score(hs) }= hs
