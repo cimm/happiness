@@ -15,7 +15,7 @@ class Question < ActiveRecord::Base
   end
 
   def respondents(since = Time.at(0))
-    answers.since(since).map(&:user).compact
+    answers.since(since).map(&:user).uniq
   end
 
   def happiness_score(since = Time.at(0))
