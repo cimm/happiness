@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.5.1'
 
 gem 'rails',                  '4.2.10'
 
@@ -15,3 +15,4 @@ gem 'rake',                   '~> 10.5.0'
 gem 'sass-rails',             '~> 5.0.7'
 gem 'uglifier',               '>= 4.1.10'
 gem 'pundit',                 '~> 1.1.0'
+gem 'sprockets', '~> 3.7.2'
